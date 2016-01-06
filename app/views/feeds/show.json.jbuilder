@@ -1,1 +1,1 @@
-json.extract! @feed, :id, :title, :link, :language, :copyright, :description, :logo, :created_at, :updated_at
+json.extract! @feed, :id, :title, :author, :link, :language, :copyright, :description, :logo, :created_at, :updated_at

@@ -1,6 +1,15 @@
 class FeedsController < ApplicationController
   before_action :set_feed, only: [:show, :edit, :update, :destroy]
 
+  def feed
+      @feed_items = Item.all
+      @feed_gen = Feed.first
+      respond_to do |format|
+        format.rss { render :layout => false }
+      end
+  end
+
+
   # GET /feeds
   # GET /feeds.json
   def index
@@ -69,6 +78,6 @@ class FeedsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def feed_params
-      params.require(:feed).permit(:title, :link, :language, :copyright, :description, :logo)
+      params.require(:feed).permit(:title, :link, :author, :language, :copyright, :description, :logo)
     end
 end
