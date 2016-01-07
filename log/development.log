@@ -1431,3 +1431,198 @@ Processing by FeedsController#feed as RSS
   [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items"[0m
   Rendered feeds/feed.rss.builder (36.2ms)
 Completed 200 OK in 85ms (Views: 46.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/feed.rss" for 127.0.0.1 at 2016-01-07 13:41:35 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FeedsController#feed as RSS
+  [1m[35mFeed Load (0.3ms)[0m  SELECT  "feeds".* FROM "feeds"  ORDER BY "feeds"."id" ASC LIMIT 1
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered feeds/feed.rss.builder (43.1ms)
+Completed 200 OK in 99ms (Views: 53.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/feed.rss" for 127.0.0.1 at 2016-01-07 13:42:19 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FeedsController#feed as RSS
+  [1m[35mFeed Load (0.1ms)[0m  SELECT  "feeds".* FROM "feeds"  ORDER BY "feeds"."id" ASC LIMIT 1
+  Rendered feeds/feed.rss.builder (10.6ms)
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 0.7ms)
+
+SyntaxError (/home/boerde/podmgr/app/views/feeds/feed.rss.builder:10: syntax error, unexpected tIVAR, expecting keyword_end
+        xml.tag!("itunes:subtitle") @feed_gen.title
+                                             ^):
+  app/views/feeds/feed.rss.builder:10: syntax error, unexpected tIVAR, expecting keyword_end
+  app/controllers/feeds_controller.rb:8:in `block (2 levels) in feed'
+  app/controllers/feeds_controller.rb:7:in `feed'
+
+
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (21.7ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.9ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (21.0ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (46.9ms)
+
+
+Started GET "/feed.rss" for 127.0.0.1 at 2016-01-07 13:42:51 +0100
+Processing by FeedsController#feed as RSS
+  [1m[36mFeed Load (0.5ms)[0m  [1mSELECT  "feeds".* FROM "feeds"  ORDER BY "feeds"."id" ASC LIMIT 1[0m
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered feeds/feed.rss.builder (15.5ms)
+Completed 200 OK in 22ms (Views: 15.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/feed.rss" for 127.0.0.1 at 2016-01-07 13:42:59 +0100
+Processing by FeedsController#feed as RSS
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT  "feeds".* FROM "feeds"  ORDER BY "feeds"."id" ASC LIMIT 1[0m
+  [1m[35mItem Load (0.1ms)[0m  SELECT "items".* FROM "items"
+  Rendered feeds/feed.rss.builder (2.3ms)
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/feed.rss" for 127.0.0.1 at 2016-01-07 13:46:30 +0100
+Processing by FeedsController#feed as RSS
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT  "feeds".* FROM "feeds"  ORDER BY "feeds"."id" ASC LIMIT 1[0m
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items"
+  Rendered feeds/feed.rss.builder (3.1ms)
+Completed 200 OK in 7ms (Views: 4.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/feed.rss" for 127.0.0.1 at 2016-01-07 13:46:33 +0100
+Processing by FeedsController#feed as RSS
+  [1m[36mFeed Load (0.2ms)[0m  [1mSELECT  "feeds".* FROM "feeds"  ORDER BY "feeds"."id" ASC LIMIT 1[0m
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items"
+  Rendered feeds/feed.rss.builder (2.2ms)
+Completed 200 OK in 6ms (Views: 3.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/feed.rss" for 127.0.0.1 at 2016-01-07 13:56:30 +0100
+Processing by FeedsController#feed as RSS
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT  "feeds".* FROM "feeds"  ORDER BY "feeds"."id" ASC LIMIT 1[0m
+  Rendered feeds/feed.rss.builder (1.3ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms)
+
+SyntaxError (/home/boerde/podmgr/app/views/feeds/feed.rss.builder:14: syntax error, unexpected keyword_do_block
+/home/boerde/podmgr/app/views/feeds/feed.rss.builder:24: syntax error, unexpected keyword_do_block, expecting keyword_end
+/home/boerde/podmgr/app/views/feeds/feed.rss.builder:32: syntax error, unexpected keyword_end, expecting end-of-input):
+  app/views/feeds/feed.rss.builder:14: syntax error, unexpected keyword_do_block
+  app/views/feeds/feed.rss.builder:24: syntax error, unexpected keyword_do_block, expecting keyword_end
+  app/views/feeds/feed.rss.builder:32: syntax error, unexpected keyword_end, expecting end-of-input
+  app/controllers/feeds_controller.rb:8:in `block (2 levels) in feed'
+  app/controllers/feeds_controller.rb:7:in `feed'
+
+
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.2ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.3ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.6ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.7ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (41.2ms)
+
+
+Started GET "/feed.rss" for 127.0.0.1 at 2016-01-07 13:56:42 +0100
+Processing by FeedsController#feed as RSS
+  [1m[35mFeed Load (0.2ms)[0m  SELECT  "feeds".* FROM "feeds"  ORDER BY "feeds"."id" ASC LIMIT 1
+  Rendered feeds/feed.rss.builder (3.5ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `summary' for #<Feed:0x00000003ffe350>):
+     9:         xml.copyright @feed_gen.copyright
+    10:         xml.itunes :subtitle, @feed_gen.title
+    11:         xml.itunes :author, @feed_gen.author
+    12:         xml.itunes :summary, @feed_gen.summary
+    13:         xml.description @feed_gen.description
+    14:         xml.itunes :owner do
+    15:             xml.itunes :name, "test name"
+  app/views/feeds/feed.rss.builder:12:in `block (2 levels) in _app_views_feeds_feed_rss_builder___3337353603064721955_33546860'
+  app/views/feeds/feed.rss.builder:5:in `block in _app_views_feeds_feed_rss_builder___3337353603064721955_33546860'
+  app/views/feeds/feed.rss.builder:4:in `_app_views_feeds_feed_rss_builder___3337353603064721955_33546860'
+  app/controllers/feeds_controller.rb:8:in `block (2 levels) in feed'
+  app/controllers/feeds_controller.rb:7:in `feed'
+
+
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.6ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (35.7ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (26.8ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (51.1ms)
+
+
+Started GET "/feed.rss" for 127.0.0.1 at 2016-01-07 13:56:59 +0100
+Processing by FeedsController#feed as RSS
+  [1m[36mFeed Load (0.2ms)[0m  [1mSELECT  "feeds".* FROM "feeds"  ORDER BY "feeds"."id" ASC LIMIT 1[0m
+  [1m[35mItem Load (0.1ms)[0m  SELECT "items".* FROM "items"
+  Rendered feeds/feed.rss.builder (6.7ms)
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/feed.rss" for 127.0.0.1 at 2016-01-07 14:20:17 +0100
+Processing by FeedsController#feed as RSS
+  [1m[36mFeed Load (0.2ms)[0m  [1mSELECT  "feeds".* FROM "feeds"  ORDER BY "feeds"."id" ASC LIMIT 1[0m
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered feeds/feed.rss.builder (2.6ms)
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/feed.rss" for 127.0.0.1 at 2016-01-07 15:47:16 +0100
+Processing by FeedsController#feed as RSS
+  [1m[36mFeed Load (0.5ms)[0m  [1mSELECT  "feeds".* FROM "feeds"  ORDER BY "feeds"."id" ASC LIMIT 1[0m
+  Rendered feeds/feed.rss.builder (1.9ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.5ms)
+
+SyntaxError (/home/boerde/podmgr/app/views/feeds/feed.rss.builder:34: syntax error, unexpected tSTRING_BEG, expecting keyword_end
+                xml.itunes :duration "0"
+                                      ^):
+  app/views/feeds/feed.rss.builder:34: syntax error, unexpected tSTRING_BEG, expecting keyword_end
+  app/controllers/feeds_controller.rb:8:in `block (2 levels) in feed'
+  app/controllers/feeds_controller.rb:7:in `feed'
+
+
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.2ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.9ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (21.1ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/boerde/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (46.5ms)
+
+
+Started GET "/feed.rss" for 127.0.0.1 at 2016-01-07 15:47:40 +0100
+Processing by FeedsController#feed as RSS
+  [1m[35mFeed Load (0.3ms)[0m  SELECT  "feeds".* FROM "feeds"  ORDER BY "feeds"."id" ASC LIMIT 1
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered feeds/feed.rss.builder (3.6ms)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/feed.rss" for 127.0.0.1 at 2016-01-07 15:47:50 +0100
+Processing by FeedsController#feed as RSS
+  [1m[35mFeed Load (0.5ms)[0m  SELECT  "feeds".* FROM "feeds"  ORDER BY "feeds"."id" ASC LIMIT 1
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered feeds/feed.rss.builder (5.8ms)
+Completed 200 OK in 10ms (Views: 7.4ms | ActiveRecord: 0.7ms)
