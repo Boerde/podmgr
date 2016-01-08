@@ -9,14 +9,14 @@ xml.rss("version" => "2.0", "xmlns:content" => "http://purl.org/rss/1.0/modules/
         xml.copyright @feed_gen.copyright
         xml.itunes :subtitle, @feed_gen.title
         xml.itunes :author, @feed_gen.author
-        xml.itunes :summary, "test sum"
+        xml.itunes :summary, @feed_gen.summary
         xml.description @feed_gen.description
         xml.itunes :owner do
-            xml.itunes :name, "test name"
-            xml.itunes :email, "test@mail.de"
+            xml.itunes :name, @feed_gen.owner_name
+            xml.itunes :email, @feed_gen.owner_mail
         end
-        xml.itunes :image, :text => "test image"
-        xml.itunes :category, :text => "test category"
+        xml.itunes :image, :text => @feed_gen.logo
+        xml.itunes :category, :text => @feed_gen.category
 
         xml.author @feed_gen.author
 
@@ -30,8 +30,8 @@ xml.rss("version" => "2.0", "xmlns:content" => "http://purl.org/rss/1.0/modules/
                 xml.dc :creator, item.speaker
                 xml.link item.file_path
                 xml.guid item.file_path
-                xml.enclosure :url => item.file_path, :type => "audio/mpeg", :length => "0"
-                xml.itunes :duration, "0"
+                    xml.enclosure :url => item.file_path, :type => "audio/mpeg", :length => "0"
+                    xml.itunes :duration, "0"
                 xml.itunes :image, :href => "logo test"
                 xml.pubDate "28 Dec 2015 12:00:00 +0100"
             end

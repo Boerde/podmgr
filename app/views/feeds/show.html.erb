@@ -35,5 +35,25 @@
   <%= @feed.logo %>
 </p>
 
+<p>
+<strong>Summary:</strong>
+  <%= @feed.summary %>
+</p>
+
+<p>
+<strong>Owner Name:</strong>
+  <%= @feed.owner_name %>
+</p>
+
+<p>
+<strong>Owner E-Mail:</strong>
+  <%= @feed.owner_mail %>
+</p>
+
+<p>
+<strong>Category:</strong>
+  <%= @feed.category %>
+</p>
+
 <%= link_to 'Edit', edit_feed_path(@feed) %> |
 <%= link_to 'Back', feeds_path %>

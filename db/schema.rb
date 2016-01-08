@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160106171431) do
+ActiveRecord::Schema.define(version: 20160108114625) do
 
   create_table "Items", force: :cascade do |t|
     t.string   "title"
@@ -19,8 +19,10 @@ ActiveRecord::Schema.define(version: 20160106171431) do
     t.string   "speaker"
     t.text     "summary"
     t.string   "file_path"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "image_path"
+    t.datetime "publication_date"
   end
 
   create_table "feeds", force: :cascade do |t|
@@ -33,6 +35,10 @@ ActiveRecord::Schema.define(version: 20160106171431) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "author"
+    t.text     "summary"
+    t.string   "owner_name"
+    t.string   "owner_mail"
+    t.string   "category"
   end
 
 end
