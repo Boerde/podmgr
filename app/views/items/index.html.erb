@@ -9,7 +9,9 @@
       <th>Series</th>
       <th>Speaker</th>
       <th>Summary</th>
-      <th>File path</th>
+      <th>File</th>
+      <th>Image Path</th>
+      <th>Publication Date</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,6 +24,8 @@
         <td><%= item.speaker %></td>
         <td><%= item.summary %></td>
         <td><%= item.file_path %></td>
+        <td><%= item.image_path %></td>
+        <td><%= item.publication_date %></td>
         <td><%= link_to 'Show', item %></td>
         <td><%= link_to 'Edit', edit_item_path(item) %></td>
         <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
