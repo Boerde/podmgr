@@ -25,6 +25,7 @@
         <td><%= item.summary %></td>
         <td><%= item.file_path %></td>
         <td><%= item.image_path %></td>
+        <td><%= item.audio_file.url%></td>
         <td><%= item.publication_date %></td>
         <td><%= link_to 'Show', item %></td>
         <td><%= link_to 'Edit', edit_item_path(item) %></td>
