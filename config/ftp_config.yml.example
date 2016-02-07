@@ -1,0 +1,13 @@
+defaults: &defaults
+    ftp_host: $FTP_URL
+    ftp_user: $FTP_USER
+    ftp_password: $FTP_PW
+
+development:
+    <<: *defaults
+
+test:
+    <<: *defaults
+
+production:
+    <<: *defaults

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160121201350) do
+ActiveRecord::Schema.define(version: 20160203213248) do
 
   create_table "Items", force: :cascade do |t|
     t.string   "title"
@@ -27,7 +27,10 @@ ActiveRecord::Schema.define(version: 20160121201350) do
     t.string   "audio_file_content_type"
     t.integer  "audio_file_file_size"
     t.datetime "audio_file_updated_at"
+    t.integer  "feed_id"
   end
+
+  add_index "Items", ["feed_id"], name: "index_items_on_feed_id"
 
   create_table "feeds", force: :cascade do |t|
     t.string   "title"
@@ -36,13 +39,15 @@ ActiveRecord::Schema.define(version: 20160121201350) do
     t.string   "copyright"
     t.string   "description"
     t.string   "logo"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.string   "author"
     t.text     "summary"
     t.string   "owner_name"
     t.string   "owner_mail"
     t.string   "category"
+    t.string   "ftp_root_url"
+    t.string   "ftp_path"
   end
 
 end

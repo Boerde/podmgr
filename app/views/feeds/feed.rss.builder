@@ -28,12 +28,12 @@ xml.rss("version" => "2.0", "xmlns:content" => "http://purl.org/rss/1.0/modules/
                 xml.itunes :subtitle, item.title
                 xml.itunes :summary, item.summary
                 xml.dc :creator, item.speaker
-                xml.link item.file_path
-                xml.guid item.file_path
-                    xml.enclosure :url => item.file_path, :type => "audio/mpeg", :length => get_mp3_duration(item.file_path)
-                    xml.itunes :duration, get_mp3_duration('')
+                xml.link item.audio_file.url
+                xml.guid item.audio_file.url
+                    xml.enclosure :url => item.audio_file.url, :type => item.audio_file_content_type, :length => get_mp3_duration(item.file_path)
+                    xml.itunes :duration, get_mp3_duration(item.file_path)
                 xml.itunes :image, :href => "logo test"
-                xml.pubDate "28 Dec 2015 12:00:00 +0100"
+                xml.pubDate item.audio_file_updated_at.to_formatted_s(:rfc822)#"Mon, 28 Dec 2015 12:00:00 +0100"
             end
         end
     end

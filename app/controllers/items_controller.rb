@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  require "mp3info"
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   # GET /items
@@ -40,6 +41,7 @@ class ItemsController < ApplicationController
   # PATCH/PUT /items/1
   # PATCH/PUT /items/1.json
   def update
+
     respond_to do |format|
       if @item.update(item_params)
         format.html { redirect_to @item, notice: 'Item was successfully updated.' }
