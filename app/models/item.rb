@@ -5,7 +5,7 @@ class Item < ActiveRecord::Base
     has_attached_file :audio_file, {
         :storage => :ftp,
         :path => ":pc_ftp_pth/:filename",
-        :url => "ftp://localhost/../../var/ftp/:filename",
+        :url => "ftp://:pc_ftp_url/:filename",
         :ftp_servers => [
             {
                 :host => YAML.load_file(Rails.root.join('config', 'ftp_config.yml'))[Rails.env]['ftp_host'],
@@ -44,5 +44,20 @@ class Item < ActiveRecord::Base
             mp3.tag.album = series
         end
     end
+
+    def get_duration
+        if audio_file == nil
+            return
+        end
+        Mp3Info.open(audio_file.path) do |mp3|
+            dur = mp3.length
+            if dur >= 60 * 60
+                return Time.at(dur).strftime("%H:%M:%S")
+            else
+                return Time.at(dur).strftime("%M:%S")
+            end
+        end
+    end
+
     validates_attachment :audio_file, content_type: {content_type: "audio/mpeg" }
 end
