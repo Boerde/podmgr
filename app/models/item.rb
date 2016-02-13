@@ -2,21 +2,7 @@ class Item < ActiveRecord::Base
     require "mp3info"
     belongs_to :feed
 
-    has_attached_file :audio_file, {
-        :storage => :ftp,
-        :path => ":pc_ftp_pth/:filename",
-        :url => "ftp://:pc_ftp_url/:filename",
-        :ftp_servers => [
-            {
-                :host => YAML.load_file(Rails.root.join('config', 'ftp_config.yml'))[Rails.env]['ftp_host'],
-                :user => YAML.load_file(Rails.root.join('config', 'ftp_config.yml'))[Rails.env]['ftp_user'],
-                :password => YAML.load_file(Rails.root.join('config', 'ftp_config.yml'))[Rails.env]['ftp_password']
-            }
-        ],
-        :ftp_connect_timeout => 5,
-        :ftp_ignore_failing_connections => true,
-        :ftp_keep_empty_directories => true
-    }
+    has_attached_file :audio_file
 
     before_save :write_info_to_audio_file
 
