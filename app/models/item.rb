@@ -42,20 +42,18 @@ class Item < ActiveRecord::Base
             mp3.tag.artist = speaker
             mp3.tag.comments = summary
             mp3.tag.album = series
+            write_attribute :length_s, mp3.length
         end
     end
 
     def get_duration
-        if audio_file == nil
-            return
+        if length_s == nil
+            return 0
         end
-        Mp3Info.open(audio_file.path) do |mp3|
-            dur = mp3.length
-            if dur >= 60 * 60
-                return Time.at(dur).strftime("%H:%M:%S")
-            else
-                return Time.at(dur).strftime("%M:%S")
-            end
+        if length_s >= 60 * 60
+            return Time.at(length_s).strftime("%H:%M:%S")
+        else
+            return Time.at(length_s).strftime("%M:%S")
         end
     end
 

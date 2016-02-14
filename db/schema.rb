@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160203213248) do
+ActiveRecord::Schema.define(version: 20160214204758) do
 
   create_table "Items", force: :cascade do |t|
     t.string   "title"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20160203213248) do
     t.integer  "audio_file_file_size"
     t.datetime "audio_file_updated_at"
     t.integer  "feed_id"
+    t.integer  "length_s"
   end
 
   add_index "Items", ["feed_id"], name: "index_items_on_feed_id"
