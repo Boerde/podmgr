@@ -10,7 +10,8 @@ class Item < ActiveRecord::Base
         {
             :host => ENV['FTP_HOST'],
             :user => ENV['FTP_USER'],
-            :password => ENV['FTP_PASSWORD']
+            :password => ENV['FTP_PASSWORD'],
+            :passive => true
         }
     ],
     :ftp_connect_timeout => 5,
