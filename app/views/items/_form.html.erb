@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :feed_id %><br>
+    <%= f.collection_select(:feed_id, Feed.all, :id, :title) %>
+  </div>
+  <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>

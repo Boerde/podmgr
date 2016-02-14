@@ -26,7 +26,6 @@ class ItemsController < ApplicationController
   # POST /items.json
   def create
     @item = Item.new(item_params)
-
     respond_to do |format|
       if @item.save
         format.html { redirect_to @item, notice: 'Item was successfully created.' }
@@ -71,6 +70,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:title, :series, :speaker, :summary, :file_path, :image_path, :publication_date, :audio_file)
+      params.require(:item).permit(:title, :series, :speaker, :summary, :file_path, :image_path, :publication_date, :audio_file, :feed_id)
     end
 end
