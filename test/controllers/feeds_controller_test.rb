@@ -1,4 +1,5 @@
 require 'test_helper'
+require 'feed_validator'
 
 class FeedsControllerTest < ActionController::TestCase
   setup do
@@ -45,5 +46,10 @@ class FeedsControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to feeds_path
+  end
+
+  test "Validate rss feed" do
+      get :feed, :format => "rss"
+      assert_valid_feed
   end
 end
