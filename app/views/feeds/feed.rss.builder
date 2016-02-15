@@ -30,8 +30,8 @@ xml.rss("version" => "2.0", "xmlns:content" => "http://purl.org/rss/1.0/modules/
                 xml.dc :creator, item.speaker
                 xml.link item.audio_file.url
                 xml.guid item.audio_file.url
-                    xml.enclosure :url => item.audio_file.url, :type => item.audio_file_content_type, :length => get_mp3_duration(item.file_path)
-                    xml.itunes :duration, get_mp3_duration(item.file_path)
+                    xml.enclosure :url => item.audio_file.url, :type => item.audio_file_content_type, :length => item.audio_file_file_size
+                    xml.itunes :duration, item.get_duration
                 xml.itunes :image, :href => "logo test"
                 xml.pubDate item.audio_file_updated_at.to_formatted_s(:rfc822)#"Mon, 28 Dec 2015 12:00:00 +0100"
             end
