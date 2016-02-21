@@ -19,7 +19,7 @@ class FeedsControllerTest < ActionController::TestCase
 
   test "should create feed" do
     assert_difference('Feed.count') do
-      post :create, feed: { copyright: @feed.copyright, description: @feed.description, language: @feed.language, link: @feed.link, logo: @feed.logo, title: @feed.title }
+      post :create, feed: { copyright: @feed.copyright, description: @feed.description, language: @feed.language, link: @feed.link, title: @feed.title }
     end
 
     assert_redirected_to feed_path(assigns(:feed))
@@ -36,7 +36,7 @@ class FeedsControllerTest < ActionController::TestCase
   end
 
   test "should update feed" do
-    patch :update, id: @feed, feed: { copyright: @feed.copyright, description: @feed.description, language: @feed.language, link: @feed.link, logo: @feed.logo, title: @feed.title }
+    patch :update, id: @feed, feed: { copyright: @feed.copyright, description: @feed.description, language: @feed.language, link: @feed.link, title: @feed.title }
     assert_redirected_to feed_path(assigns(:feed))
   end
 
