@@ -15,7 +15,7 @@ xml.rss("version" => "2.0", "xmlns:content" => "http://purl.org/rss/1.0/modules/
             xml.itunes :name, @feed_gen.owner_name
             xml.itunes :email, @feed_gen.owner_mail
         end
-        xml.itunes :image, :text => @feed_gen.logo
+        #xml.itunes :image, :text => @feed_gen.logo
         xml.itunes :category, :text => @feed_gen.category
 
         xml.author @feed_gen.author
