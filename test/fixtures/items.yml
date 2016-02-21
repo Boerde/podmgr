@@ -5,11 +5,9 @@ one:
   series: MyString
   speaker: MyString
   summary: MyString
-  file_path: MyString
 
 two:
   title: MyString
   series: MyString
   speaker: MyString
   summary: MyString
-  file_path: MyString
