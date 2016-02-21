@@ -1,4 +1,5 @@
 require 'test_helper'
+require 'nokogiri'
 
 class FeedsControllerTest < ActionController::TestCase
   setup do
@@ -45,5 +46,13 @@ class FeedsControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to feeds_path
+  end
+
+  test "Validate rss feed" do
+      get :feed, :format => "rss"
+
+      assert_nothing_raised do
+          feedback = Nokogiri::XML response.body { |config| config.strict }
+      end
   end
 end

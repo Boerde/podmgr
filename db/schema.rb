@@ -11,27 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160214204758) do
-
-  create_table "Items", force: :cascade do |t|
-    t.string   "title"
-    t.string   "series"
-    t.string   "speaker"
-    t.text     "summary"
-    t.string   "file_path"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.string   "image_path"
-    t.datetime "publication_date"
-    t.string   "audio_file_file_name"
-    t.string   "audio_file_content_type"
-    t.integer  "audio_file_file_size"
-    t.datetime "audio_file_updated_at"
-    t.integer  "feed_id"
-    t.integer  "length_s"
-  end
-
-  add_index "Items", ["feed_id"], name: "index_items_on_feed_id"
+ActiveRecord::Schema.define(version: 20160221164618) do
 
   create_table "feeds", force: :cascade do |t|
     t.string   "title"
@@ -39,7 +19,6 @@ ActiveRecord::Schema.define(version: 20160214204758) do
     t.string   "language"
     t.string   "copyright"
     t.string   "description"
-    t.string   "logo"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.string   "author"
@@ -50,5 +29,23 @@ ActiveRecord::Schema.define(version: 20160214204758) do
     t.string   "ftp_root_url"
     t.string   "ftp_path"
   end
+
+  create_table "items", force: :cascade do |t|
+    t.string   "title"
+    t.string   "series"
+    t.string   "speaker"
+    t.text     "summary"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.datetime "publication_date"
+    t.string   "audio_file_file_name"
+    t.string   "audio_file_content_type"
+    t.integer  "audio_file_file_size"
+    t.datetime "audio_file_updated_at"
+    t.integer  "feed_id"
+    t.integer  "length_s"
+  end
+
+  add_index "items", ["feed_id"], name: "index_items_on_feed_id"
 
 end
