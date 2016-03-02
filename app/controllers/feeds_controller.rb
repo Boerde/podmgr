@@ -1,5 +1,13 @@
 class FeedsController < ApplicationController
   before_action :set_feed, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user
+
+  def logged_in_user
+      unless logged_in?
+          flash[:danger] = "Please log in."
+          redirect_to login_url
+      end
+  end
 
   def feed
       @feed_items = Item.all
