@@ -30,7 +30,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #mp3tag reader/writer
 gem 'ruby-mp3info'
 
-gem 'bootstrap-sass'
+gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
 
 group :production do
     gem 'pg'
