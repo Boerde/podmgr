@@ -4,6 +4,8 @@ require 'nokogiri'
 class FeedsControllerTest < ActionController::TestCase
   setup do
     @feed = feeds(:one)
+    @user = users(:one)
+      log_in_as @user
   end
 
   test "should get index" do
