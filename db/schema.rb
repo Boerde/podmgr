@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -44,9 +43,8 @@ ActiveRecord::Schema.define(version: 20160228132844) do
     t.datetime "audio_file_updated_at"
     t.integer  "feed_id"
     t.integer  "length_s"
+    t.index ["feed_id"], name: "index_items_on_feed_id"
   end
-
-  add_index "items", ["feed_id"], name: "index_items_on_feed_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
