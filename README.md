@@ -8,3 +8,6 @@ Features:
     * Mp3 file (tags are synced into mp3 tags)
     * Images depending on the artist
 - managing multiple feeds
+
+Dependencies:
+- ArchLinux: pacman -S postgresql
