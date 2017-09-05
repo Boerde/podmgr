@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :items
   resources :feeds
-    get 'feed' => 'feeds#feed'
+  get    'feed' => 'feeds#feed'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'

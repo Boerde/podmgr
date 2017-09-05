@@ -1,13 +1,13 @@
 class ItemsController < ApplicationController
-  require "mp3info"
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  require 'mp3info'
+  before_action :set_item, only: %i[show edit update destroy]
   before_action :logged_in_user
 
   def logged_in_user
-      unless logged_in?
-          flash[:danger] = "Please log in."
-          redirect_to login_url
-      end
+    unless logged_in?
+      flash[:danger] = 'Please log in.'
+      redirect_to login_url
+    end
   end
 
   # GET /items
@@ -18,8 +18,7 @@ class ItemsController < ApplicationController
 
   # GET /items/1
   # GET /items/1.json
-  def show
-  end
+  def show; end
 
   # GET /items/new
   def new
@@ -27,8 +26,7 @@ class ItemsController < ApplicationController
   end
 
   # GET /items/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /items
   # POST /items.json
@@ -48,7 +46,6 @@ class ItemsController < ApplicationController
   # PATCH/PUT /items/1
   # PATCH/PUT /items/1.json
   def update
-
     respond_to do |format|
       if @item.update(item_params)
         format.html { redirect_to @item, notice: 'Item was successfully updated.' }
@@ -71,13 +68,14 @@ class ItemsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_item
-      @item = Item.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def item_params
-      params.require(:item).permit(:title, :series, :speaker, :summary, :publication_date, :audio_file, :feed_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def item_params
+    params.require(:item).permit(:title, :series, :speaker, :summary, :publication_date, :audio_file, :feed_id)
+  end
 end

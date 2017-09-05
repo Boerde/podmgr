@@ -5,21 +5,21 @@ class FeedsControllerTest < ActionController::TestCase
   setup do
     @feed = feeds(:one)
     @user = users(:one)
-      log_in_as @user
+    log_in_as @user
   end
 
-  test "should get index" do
+  test 'should get index' do
     get :index
     assert_response :success
     assert_not_nil assigns(:feeds)
   end
 
-  test "should get new" do
+  test 'should get new' do
     get :new
     assert_response :success
   end
 
-  test "should create feed" do
+  test 'should create feed' do
     assert_difference('Feed.count') do
       post :create, feed: { copyright: @feed.copyright, description: @feed.description, language: @feed.language, link: @feed.link, title: @feed.title }
     end
@@ -27,22 +27,22 @@ class FeedsControllerTest < ActionController::TestCase
     assert_redirected_to feed_path(assigns(:feed))
   end
 
-  test "should show feed" do
+  test 'should show feed' do
     get :show, id: @feed
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get :edit, id: @feed
     assert_response :success
   end
 
-  test "should update feed" do
+  test 'should update feed' do
     patch :update, id: @feed, feed: { copyright: @feed.copyright, description: @feed.description, language: @feed.language, link: @feed.link, title: @feed.title }
     assert_redirected_to feed_path(assigns(:feed))
   end
 
-  test "should destroy feed" do
+  test 'should destroy feed' do
     assert_difference('Feed.count', -1) do
       delete :destroy, id: @feed
     end
@@ -50,11 +50,11 @@ class FeedsControllerTest < ActionController::TestCase
     assert_redirected_to feeds_path
   end
 
-  test "Validate rss feed" do
-      get :feed, :format => "rss"
+  test 'Validate rss feed' do
+    get :feed, format: 'rss'
 
-      assert_nothing_raised do
-          feedback = Nokogiri::XML response.body { |config| config.strict }
-      end
+    assert_nothing_raised do
+      feedback = Nokogiri::XML response.body(&:strict)
+    end
   end
 end
